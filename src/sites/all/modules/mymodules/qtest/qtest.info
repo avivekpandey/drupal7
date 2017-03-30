@@ -1,0 +1,3 @@
+name = qtest
+core = 7.x
+dependencies[]=ctools_modal
