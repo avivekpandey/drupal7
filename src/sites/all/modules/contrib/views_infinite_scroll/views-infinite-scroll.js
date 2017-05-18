@@ -14,11 +14,15 @@
    */
   $.fn.infiniteScrollInsertView = function ($new_view) {
     var $existing_view = this;
+    // var $existing_content = $existing_view.find('.view-content').children();
+    // $new_view = $new_view.hasClass('view') ? $new_view : $new_view.find('> .view');
+    // $new_view.find('> .view-content').prepend($existing_content);
+
+    // Exclude table header
     var $existing_content = $existing_view.find('tbody').children();
-   // var $existing_content = $existing_view.find('.view-content').children();
     $new_view = $new_view.hasClass('view') ? $new_view : $new_view.find('> .view');
-    //$new_view.find('> .view-content').prepend($existing_content);
     $new_view.find('tbody').prepend($existing_content);
+    
     $existing_view.replaceWith($new_view);
     $(document).trigger('infiniteScrollComplete', [$new_view, $existing_content]);
   };
