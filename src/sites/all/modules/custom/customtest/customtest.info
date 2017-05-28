@@ -1,0 +1,3 @@
+name = Custom Test 
+description = Test the customization of module.
+core = 7.x

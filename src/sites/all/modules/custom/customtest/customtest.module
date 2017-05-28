@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * Function for generating node state/status links
+ *
+ * @param
+ * $data    Object
+ * @return
+ */
+
+function book_status_links($data){
+   global $base_url,$user;
+    $status    = $data->_field_data['nid']['entity']->field_book_status['und'][0]['value'];
+    if ($status != 1) {
+        ?>
+        <a class='unlock' data-type="<?php echo $data->_field_data['nid']['entity']->type?>" data-nid="<?php echo $data->_field_data['nid']['entity']->nid;?>" data-toUpdate="status" title='Open It'>Publish</a>
+        <?php
+    } else {
+        ?>
+        <a class='lock' data-type="<?php echo $data->_field_data['nid']['entity']->type?>" data-nid="<?php echo $data->_field_data['nid']['entity']->nid;?>" data-toUpdate="status" title='Close It'>Draft</a>
+        <?php
+    }
+}
