@@ -1,0 +1,6 @@
+machine name  = angular-bootstrap
+name          = AngularJS
+vendor url    = http://angularjs.org/
+download url  = http://angularjs.org/
+version       = 1.3.1
+files[js][ui-bootstrap-tpls.js]  = ui-bootstrap-tpls.js

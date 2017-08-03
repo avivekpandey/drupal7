@@ -1,0 +1,6 @@
+machine name  = angular
+name          = AngularJS
+vendor url    = http://angularjs.org/
+download url  = http://angularjs.org/
+version       = 1.3.0
+files[js][angular.js]  = angular.js

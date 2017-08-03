@@ -1,0 +1,30 @@
+<?php
+
+define('TEST_NG_MODULE_PATH', drupal_get_path('module', 'test_ng'));
+
+function test_ng_menu(){
+ $items = array();
+ $items['booklist'] = array(
+    'title' => t('Book List'),
+    'description' => 'Shows Book Lists',
+    'page callback' => 'test_ng_disply_page',
+    'access arguments' => array('access content'),
+  );
+  return $items;
+}
+
+
+function test_ng_theme(){
+	return array(
+			'book_list' => array(
+					'template'=>'book-list',
+				),
+		);
+}
+
+
+function test_ng_disply_page(){
+	drupal_add_library('angularjs', 'angularjs');
+	drupal_add_js(TEST_NG_MODULE_PATH . '/js/book_list.js');
+	return theme('book_list');
+}
