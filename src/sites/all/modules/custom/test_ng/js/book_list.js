@@ -1,7 +1,7 @@
 
 var app = angular.module('myModule', [])
 					.controller('myController', function($scope, $http){
-						$http.get('users-listing').then(function(response){
+						$http.get('book-listing-json').then(function(response){
 							$scope.res = response.data;
 						})
 					});
